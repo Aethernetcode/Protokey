@@ -280,6 +280,13 @@ function read(fileName) {
   file_opened = true;
 }
 
+function createNewFile() {
+  var newFileName = prompt("Protokollname:");
+  create(newFileName);
+}
+
+
+
 // ! Create a new file
 function create(fileName) {
   stop(fileName);
@@ -358,6 +365,7 @@ function ws_connected() {
 
 function reloadEditor() {
   read(get_editor_filename());
+  adjustSize();
 };
 
 // ========== Startup ========== //

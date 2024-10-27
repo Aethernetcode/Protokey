@@ -170,7 +170,7 @@ button.subtle {
 
 
 /* Inputs and buttons */
-textarea {
+/* textarea {
 	color: #282828;
 	resize: vertical;
 	width: 100%;
@@ -184,7 +184,7 @@ textarea {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	outline: none;
-}
+} */
 
 input[type="file"] {
 	padding: 7px 20px;
@@ -220,6 +220,24 @@ input:hover {
 	max-width: 284px !important;
 }
 
+.editor-ta {
+	color: #28282880;
+	resize: none;
+	width: 100%;
+	height: 450px;
+	padding: 15px 5px;
+	border: none;
+	border-top: 1px solid #5d5d5d14;
+	border-bottom: 1px solid #5d5d5d14;
+	border-radius: 0;
+	background: none;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 14px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	outline: none;
+}
 
 
 
@@ -366,7 +384,7 @@ main {
 	background: white;
 	margin: 0;
 	margin-top: 500px;
-	padding: 60px 40px;
+	padding: 60px 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -466,6 +484,17 @@ code {
 .reload {
     cursor: pointer;
 }
+
+.addNew {
+	cursor: pointer;
+	color: black;
+}
+
+.header-action-wrapper {
+	display: flex;
+	gap: 20px;
+}
+
 /* 
 .reload:active {
     transform: rotate(360deg);
@@ -803,4 +832,15 @@ h5 {
 .hide {
 	display: none;
 	transition: all 1s;
+}
+
+
+
+
+
+.mirror {
+    position: fixed;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
 }

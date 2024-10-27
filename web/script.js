@@ -195,3 +195,56 @@ function ws_init() {
   if (ws_queue_interval) clearInterval(ws_queue_interval);
   ws_queue_interval = setInterval(ws_msg_queue_update, 1);
 }
+
+
+// textarea sizing
+
+
+/*
+
+document.addEventListener('DOMContentLoaded', () => {
+  const textarea = document.getElementById('editor');
+
+  const mirroredEle = document.createElement('textarea');
+  mirroredEle.classList.add('mirror');
+  document.body.appendChild(mirroredEle);
+
+  const textareaStyles = window.getComputedStyle(textarea);
+  [
+      'border',
+      'boxSizing',
+      'fontFamily',
+      'fontSize',
+      'fontWeight',
+      'letterSpacing',
+      'lineHeight',
+      'padding',
+      'textDecoration',
+      'textIndent',
+      'textTransform',
+      'whiteSpace',
+      'wordSpacing',
+      'wordWrap',
+  ].forEach((property) => {
+      mirroredEle.style[property] = textareaStyles[property];
+  });
+
+  const parseValue = (v) => v.endsWith('px') ? parseInt(v.slice(0, -2), 10) : 0;
+  const borderTopWidth = parseValue(textareaStyles.borderTopWidth);
+  const borderBottomWidth = parseValue(textareaStyles.borderBottomWidth);
+
+  const adjustSize = () => {
+      mirroredEle.textContent = textarea.value;
+      const newHeight = mirroredEle.scrollHeight + borderTopWidth + borderBottomWidth;
+      textarea.style.height = `${newHeight}px`;
+  };
+
+  textarea.addEventListener('input', () => {
+      adjustSize();
+  });
+  textarea.addEventListener('click', () => {
+    adjustSize();
+});
+
+  adjustSize();
+}); */

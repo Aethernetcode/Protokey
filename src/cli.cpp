@@ -157,7 +157,7 @@ namespace cli {
                     String s = "running " + duckscript::currentScript();
                     print(s);
                 } else {
-                    print("Super WiFiDuck -- Ready");
+                    print("Protokey -- Ready");
                 }
             } else {
                 print("Internal connection problem");

@@ -1,0 +1,121 @@
+<!--
+   This software is licensed under the MIT License. See the license file for details.
+   Source: https://github.com/spacehuhntech/WiFiDuck
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta name="theme-color" content="#ececec">
+
+        <meta name="description" content="WiFi Duck">
+        <title>Protokey | Settings</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+        <script src="settings.js"></script>
+
+		<link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' rx='52' fill='%23F8F8F8'/%3E%3Cpath d='M69.293 31H51.707C51.1547 31 50.707 31.4477 50.707 32V49.5453C50.707 50.0976 50.2593 50.5453 49.707 50.5453H32C31.4477 50.5453 31 50.993 31 51.5453V69.3333C31 69.8856 31.4477 70.3333 32 70.3333H49.707C50.2593 70.3333 50.707 70.781 50.707 71.3333V89C50.707 89.5523 51.1547 90 51.707 90H69.293C69.8453 90 70.293 89.5523 70.293 89V71.3333C70.293 70.781 70.7407 70.3333 71.293 70.3333H89C89.5523 70.3333 90 69.8856 90 69.3333V51.5453C90 50.993 89.5523 50.5453 89 50.5453H71.293C70.7407 50.5453 70.293 50.0976 70.293 49.5453V32C70.293 31.4477 69.8453 31 69.293 31Z' fill='%23ED1C24'/%3E%3Crect x='31' y='116' width='118' height='11' rx='5' fill='%23D9D9D9'/%3E%3Crect x='31' y='138' width='90' height='11' rx='5' fill='%23D9D9D9'/%3E%3C/svg%3E"/>
+        <link rel="apple-touch-icon" type="image/png+xml" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOuSURBVHgB7d2xaiVVHIDxk3hdVnc3u7W7paCCrfgAYinCii9h4SPZWVrYi62IYCk+wK71JiZ4CSbRCVha7eSe3C+/H0w7xeWbw5lz+TMH2+32akDE4YAQQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KZsRcfXy5fjrsy/H1cnJeF0Hz56Ot779Zhw8fTrYL5kV+vLFH6vEvLh68fL6fuwfWw5SBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTIuj/cXXy52D/HGy326sxycXPv1xfq9zrhx/H5W+/j7UsY1ib55+PNRx+8N7YfPrJ4OZNDfrs3Q/HXXBw9Gi8/etPg5tny7EDti+7I2hSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTMjXog6OjcRcs41zsxtQRrOVTbGvNFP793fer3Wvxxscfjc0Xa80Uvn99cfOmfqdw+Q7g5vlKq9ejo1WDfvPrr66jZr9k9tDLICp4KSRF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpmaAPn73z77XO9Msy67jcj/0zdaYQ1mbLQYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETcrUj9f/Z7vdjuPj43F+fj4uLy8H++X+/fvjwYMH4+HDh2O26UG/evXqOmb217IgLdfFxcV4/PjxmGnqluP09FTMIcvitIQ909Sgz87OBi2zF6ipQc9+mlnf8h40k1MOVjX7pX5q0IeHnifWNbWoe/fuDVqWI7yZpgY9+4iH9S3n0TNNDXp5mkXd8eTJk+l/rkz/Y2X5ETabzfURnlOP/bO8By1bx2Vhmr3dWPhoECmOGUgRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmmvoNu0xT2rpn6DrpNU9i7Zuo77DZMYe+aqe+4u7ZgmPqOmz2FvWtOOeLu2ku2qW9STH3H3YaxqF0y9R03ewp710x9h92GKexdM/Udc9umsHfN1DcpjhlIETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBk/IPBPXPi6c3GRcAAAAASUVORK5CYII="/>
+        
+
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <!-- <link rel="manifest" href="manifest.json"> -->
+        <!-- <meta name="theme-color" content="#f5f5f5"> -->
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    </head>
+  	<body>
+        <!-- <nav>
+            <ul class="menu">
+                <li><a href="index.html">WiFi Duck</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="terminal.html">Terminal</a></li>
+                <li><a href="credits.html">About</a></li>
+            </ul>
+        </nav> -->
+		<nav id="nav" style="height:400px">
+			<div id="nav-subsec">
+				<button class="icon-only" onclick="window.location.href = 'index.html';"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<mask id="mask0_2057_498" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+					<rect width="18" height="18" fill="#D9D9D9"/>
+					</mask>
+					<g mask="url(#mask0_2057_498)">
+					<path d="M4.825 10L10.425 15.6L9 17L1 9L9 1L10.425 2.4L4.825 8H17V10H4.825Z" fill="#1C1B1F"/>
+					</g>
+					</svg>
+					</button>
+					<div id="status-wrapper">
+						<div id="status-dot"></div>
+						<button id="status" onclick="menuDropdown()"></button>
+						<div id="myDropdown" class="dropdown-content">
+							<!-- <button class="danger" id="format">format</button> -->
+							<button class="warn" id="stop">stop</button>
+							<button class="white" id="reconnect">reconnect</button>
+						  </div>
+					</div>
+			</div>
+            <div class="nav-link-sec">
+				<h1 class="nav-header">Settings</h1>
+			    <a href="terminal.html"><h1 class="nav-header-inactive">Terminal</h1></a>
+            </div>
+
+	    </nav>
+		<main style="margin-top:400px;">
+			<section>
+				<div class="sec-subsec">
+					<h2>WiFi</h2>
+					<p class="descr">Restart the device to apply new settings.</p>
+				</div>
+				<table>
+				<tr>
+					<td>SSID:</td>
+					<td id="ssid" class="table-text"></td>
+					<td><button class="subtle" id="edit_ssid">edit</button></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td id="password" class="table-text"></td>
+					<td><button class="subtle" id="edit_password">edit</button></td>
+				</tr>
+				<tr>
+					<td>Channel:</td>
+					<td id="channel" class="table-text"></td>
+					<td><button class="subtle" id="edit_channel">edit</button></td>
+				</tr>
+				<tr>
+					<td>Autorun Script:</td>
+					<td id="autorun" class="table-text"></td>
+					<td><button class="subtle warn" id="disable_autorun">disable</button></td>
+				</tr>
+				</table>
+				<button class="danger subtle" id="reset">Reset settings</button>
+			</section>
+			<section>
+				<div class="sec-subsec">
+					<h2>Update</h2>
+					<p class="descr">
+						Go to <a href="https://github.com/spacehuhntech/WiFiDuck/releases" target="_blank">wifiduck.com/releases</a>
+						to check for updates.<br>Select a .bin file and press upload to update the device.<br>
+					</p>
+				</div>
+				
+
+				<form method='POST' action='/update' enctype='multipart/form-data'>
+				<input type='file' name='update'>
+				<input type='submit' class="warn" value='Upload'>
+				</form>
+			</section>
+			<footer>
+				<a href="https://github.com/spacehuhntech/WiFiDuck" target="_blank">Source</a>
+				<br><br>
+				<span id="version"></span><br>
+				Copyright (c) 2021 Spacehuhn Technologies<br>
+				<a href="https://spacehuhn.com" target="_blank">spacehuhn.com</a>
+			</footer>
+	</body>
+</html>

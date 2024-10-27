@@ -1,0 +1,367 @@
+<!--
+    This software is licensed under the MIT License. See the license file for details.
+    Source: https://github.com/spacehuhntech/WiFiDuck
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta name="theme-color" content="#ececec">
+
+        <meta name="description" content="WiFi Duck">
+        <title>Protokey</title>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+        <script src="index.js"></script>
+        <link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' rx='52' fill='%23F8F8F8'/%3E%3Cpath d='M69.293 31H51.707C51.1547 31 50.707 31.4477 50.707 32V49.5453C50.707 50.0976 50.2593 50.5453 49.707 50.5453H32C31.4477 50.5453 31 50.993 31 51.5453V69.3333C31 69.8856 31.4477 70.3333 32 70.3333H49.707C50.2593 70.3333 50.707 70.781 50.707 71.3333V89C50.707 89.5523 51.1547 90 51.707 90H69.293C69.8453 90 70.293 89.5523 70.293 89V71.3333C70.293 70.781 70.7407 70.3333 71.293 70.3333H89C89.5523 70.3333 90 69.8856 90 69.3333V51.5453C90 50.993 89.5523 50.5453 89 50.5453H71.293C70.7407 50.5453 70.293 50.0976 70.293 49.5453V32C70.293 31.4477 69.8453 31 69.293 31Z' fill='%23ED1C24'/%3E%3Crect x='31' y='116' width='118' height='11' rx='5' fill='%23D9D9D9'/%3E%3Crect x='31' y='138' width='90' height='11' rx='5' fill='%23D9D9D9'/%3E%3C/svg%3E"/>
+        <link rel="apple-touch-icon" type="image/png+xml" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOuSURBVHgB7d2xaiVVHIDxk3hdVnc3u7W7paCCrfgAYinCii9h4SPZWVrYi62IYCk+wK71JiZ4CSbRCVha7eSe3C+/H0w7xeWbw5lz+TMH2+32akDE4YAQQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KZsRcfXy5fjrsy/H1cnJeF0Hz56Ot779Zhw8fTrYL5kV+vLFH6vEvLh68fL6fuwfWw5SBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTIuj/cXXy52D/HGy326sxycXPv1xfq9zrhx/H5W+/j7UsY1ib55+PNRx+8N7YfPrJ4OZNDfrs3Q/HXXBw9Gi8/etPg5tny7EDti+7I2hSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTMjXog6OjcRcs41zsxtQRrOVTbGvNFP793fer3Wvxxscfjc0Xa80Uvn99cfOmfqdw+Q7g5vlKq9ejo1WDfvPrr66jZr9k9tDLICp4KSRF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpmaAPn73z77XO9Msy67jcj/0zdaYQ1mbLQYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETcrUj9f/Z7vdjuPj43F+fj4uLy8H++X+/fvjwYMH4+HDh2O26UG/evXqOmb217IgLdfFxcV4/PjxmGnqluP09FTMIcvitIQ909Sgz87OBi2zF6ipQc9+mlnf8h40k1MOVjX7pX5q0IeHnifWNbWoe/fuDVqWI7yZpgY9+4iH9S3n0TNNDXp5mkXd8eTJk+l/rkz/Y2X5ETabzfURnlOP/bO8By1bx2Vhmr3dWPhoECmOGUgRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmmvoNu0xT2rpn6DrpNU9i7Zuo77DZMYe+aqe+4u7ZgmPqOmz2FvWtOOeLu2ku2qW9STH3H3YaxqF0y9R03ewp710x9h92GKexdM/Udc9umsHfN1DcpjhlIETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBk/IPBPXPi6c3GRcAAAAASUVORK5CYII="/>
+        
+
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <!-- <link rel="manifest" href="manifest.json"> -->
+        <!-- <meta name="theme-color" content="#f5f5f5"> -->
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    </head>
+
+
+     <body>
+        <nav id="nav">
+                <div id="nav-subsec">
+                    <button class="icon-only" onclick="window.location.href = 'settings.html';"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 6V4H13V0H15V4H18V6H10ZM13 18V8H15V18H13ZM3 18V14H0V12H8V14H5V18H3ZM3 10V0H5V10H3Z" fill="#282828"/>
+                        </svg></button>
+                        <div id="status-wrapper">
+                            <div id="status-dot"></div>
+                            <button id="status" onclick="menuDropdown()"></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <!-- <button class="danger" id="format">format</button> -->
+                                <button class="warn" id="stop">stop</button>
+                                <button class="white" id="reconnect">reconnect</button>
+                              </div>
+                        </div>
+                </div>
+                <h1 id="nav-header">
+                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M34.6311 0H17.3689V17.2263H0V34.6667H17.3689V52H34.6311V34.6667H52V17.2263H34.6311V0Z" fill="#ED1C24"/>
+                        </svg>                        
+                      Protokolle und <br> Vorlagen </h1>
+        </nav>
+        <main>
+            <!-- <section>
+                <h1>Status</h1>
+                <div class="row">
+                    <p><b>Storage: </b><span id="freeMemory">-</span></p>
+                    <button class="danger" id="format">format</button>
+                    <button class="warn" id="stop">stop</button>
+                    <button class="white" id="reconnect">reconnect</button>
+                </div>
+            </section> -->
+            <!-- <div class="sec-nav">
+                
+            </div> -->
+            <section>
+                <div class="sec-subsec">
+                    <h3>Vorlagen <a class="reload" id="scriptsReload"><svg style="scale:1.2;opacity:.9" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_2038_142" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_2038_142)">
+                    <path d="M12.05 20C9.81667 20 7.91667 19.225 6.35 17.675C4.78333 16.125 4 14.2333 4 12V11.825L2.4 13.425L1 12.025L5 8.025L9 12.025L7.6 13.425L6 11.825V12C6 13.6667 6.5875 15.0833 7.7625 16.25C8.9375 17.4167 10.3667 18 12.05 18C12.4833 18 12.9083 17.95 13.325 17.85C13.7417 17.75 14.15 17.6 14.55 17.4L16.05 18.9C15.4167 19.2667 14.7667 19.5417 14.1 19.725C13.4333 19.9083 12.75 20 12.05 20ZM19 15.975L15 11.975L16.4 10.575L18 12.175V12C18 10.3333 17.4125 8.91667 16.2375 7.75C15.0625 6.58333 13.6333 6 11.95 6C11.5167 6 11.0917 6.05 10.675 6.15C10.2583 6.25 9.85 6.4 9.45 6.6L7.95 5.1C8.58333 4.73333 9.23333 4.45833 9.9 4.275C10.5667 4.09167 11.25 4 11.95 4C14.1833 4 16.0833 4.775 17.65 6.325C19.2167 7.875 20 9.76667 20 12V12.175L21.6 10.575L23 11.975L19 15.975Z" fill="#282828"/>
+                    </g>
+                    </svg></a></h3>
+				    <p class="descr">Wähle eine Vorlage zum Hochladen aus.</p>
+				</div>
+                <div class="table" id="scriptTable"></div>
+                <div class="row">
+                    <input placeholder="Filename /<name>" type="text" class="smooth" value="/" id="newFile"/>
+                    <button class="success" onclick="create(get_new_filename())">Create</button>
+                    </div>
+            </section>
+            <section>
+                <h3>Editor <a class="reload" id="editorReload"><svg style="scale:1.2;opacity:.9" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_2038_142" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                    <rect width="24" height="24" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_2038_142)">
+                    <path d="M12.05 20C9.81667 20 7.91667 19.225 6.35 17.675C4.78333 16.125 4 14.2333 4 12V11.825L2.4 13.425L1 12.025L5 8.025L9 12.025L7.6 13.425L6 11.825V12C6 13.6667 6.5875 15.0833 7.7625 16.25C8.9375 17.4167 10.3667 18 12.05 18C12.4833 18 12.9083 17.95 13.325 17.85C13.7417 17.75 14.15 17.6 14.55 17.4L16.05 18.9C15.4167 19.2667 14.7667 19.5417 14.1 19.725C13.4333 19.9083 12.75 20 12.05 20ZM19 15.975L15 11.975L16.4 10.575L18 12.175V12C18 10.3333 17.4125 8.91667 16.2375 7.75C15.0625 6.58333 13.6333 6 11.95 6C11.5167 6 11.0917 6.05 10.675 6.15C10.2583 6.25 9.85 6.4 9.45 6.6L7.95 5.1C8.58333 4.73333 9.23333 4.45833 9.9 4.275C10.5667 4.09167 11.25 4 11.95 4C14.1833 4 16.0833 4.775 17.65 6.325C19.2167 7.875 20 9.76667 20 12V12.175L21.6 10.575L23 11.975L19 15.975Z" fill="#282828"/>
+                    </g>
+                    </svg></a></h3>
+                <div class="col">
+                    <input onkeydown="if(event.key === 'Enter') reloadEditor()" placeholder="Filename /<name>" type="text" class="smooth" value="/" id="editorFile">
+                    <div class="row"><button class="danger" id="editorDelete">Delete</button>
+                        <!-- <button class="primary" id="editorDownload">Download</button> -->
+                        <button class="primary full-w" id="editorAutorun">Enable autorun</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <textarea class="smooth" id="editor" value="zoom disabled"></textarea>
+                </div>
+                <div class="row">
+                    <button class="success full-w" id="editorSave">save</button>
+                    <!-- <button class="warn full-w" id="editorRun">run</button> -->
+                    <!-- <button class="danger" id="editorStop">stop</button> -->
+                </div>
+                <div class="row">
+                    <div class="debugger">
+                        Output: <span id="editorinfo">saved</span>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="col">
+                    <p><b>Storage: </b><span id="freeMemory">-</span></p>
+                    <button class="danger" id="format">format</button>
+                </div>
+            </section>
+
+            <div class="hover-bar hide">
+                <p id="runScriptName"></p>
+                <button class="warn full-w" id="editorRun">run</button>
+            </div>
+            
+            
+            <!-- <section>
+                h1>Documentation</h1
+                <h2>Scripting</h2>
+                <h3>Basics</h3>
+                <p>
+                    Keys are separated by a single space.<br>
+                    Everything written in a single line gets pressed and released at the same time.<br>
+                    To write text, use the STRING function.
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Example</th>
+                            <th>Explanation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>WINDOWS
+                                <br> r
+                            </td>
+                            <td>Type the Windows key and then the r key</td>
+                        </tr>
+                        <tr>
+                            <td>WINDOWS r</td>
+                            <td>Press the Windows key and the r key simultaneously</td>
+                        </tr>
+                        <tr>
+                            <td>STRING WINDOWS r</td>
+                            <td>Write WINDOWS r</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Functions</h3>
+                <table id="ducky-functions-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Example</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>REM</code></td>
+                            <td><code>REM Hello World!</code></td>
+                            <td>Comment</td>
+                        </tr>
+                        <tr>
+                            <td><code>DEFAULTDELAY</code> or <code>DEFAULT_DELAY</code></td>
+                            <td><code>DEFAULTDELAY 200</code></td>
+                            <td>Time in ms between every command</td>
+                        </tr>
+                        <tr>
+                            <td><code>DELAY</code></td>
+                            <td><code>DELAY 1000</code></td>
+                            <td>Delay in ms</td>
+                        </tr>
+                        <tr>
+                            <td><code>STRING</code></td>
+                            <td><code>STRING Hello World!</code></td>
+                            <td>Types the following string</td>
+                        </tr>
+                        <tr>
+                            <td><code>REPEAT</code> or <code>REPLAY</code></td>
+                            <td><code>REPEAT 3</code></td>
+                            <td>Repeats the last command n times</td>
+                        </tr>
+                        <tr>
+                            <td><code>LOCALE</code></td>
+                            <td><code>LOCALE DE</code></td>
+                            <td>Sets the keyboard layout. Available: <code>DE</code>, <code>GB</code>, <code>US</code>, <code>ES</code>, <code>FR</code>, <code>DK</code>, <code>RU</code>, <code>BE</code>, <code>PT</code>, <code>IT</code>, <code>SK</code>, <code>CZ</code>, <code>SI</code>, <code>BG</code>, <code>CA-FR</code>, <code>CH-DE</code>, <code>CH-FR</code>, <code>HU</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>KEYCODE</code></td>
+                            <td><code>KEYCODE 0x02 0x04</code></td>
+                            <td>Types a specific key code (modifier, key1[, ..., key6]) in decimal or hexadecimal</td>
+                        </tr>
+                        <tr>
+                            <td><code>LED</code></td>
+                            <td><code>LED 40 20 10</code></td>
+                            <td>Changes the color of the LED in decimal RGB values (0-255)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Standard Keys</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>a</code> - <code>z</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>A</code> - <code>Z</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>0</code> - <code>9</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>F1</code> - <code>F12</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Modifier Keys</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>CTRL</code> or <code>CONTROL</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>SHIFT</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>ALT</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>WINDOWS</code> or <code>GUI</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Other Keys</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>ENTER</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>MENU</code> or <code>APP</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>DELETE</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>HOME</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>INSERT</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>PAGEUP</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>PAGEDOWN</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>UP</code> or <code>UPARROW</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>DOWN</code> or <code>DOWNARROW</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>LEFT</code> or <code>LEFTARROW</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>RIGHT</code> or <code>RIGHTARROW</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>TAB</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>END</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>ESC</code> or <code>ESCAPE</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>SPACE</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>PAUSE or BREAK</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>CAPSLOCK</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>NUMLOCK</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>PRINTSCREEN</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>SCROLLLOCK</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Numpad Keys</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>NUM_0</code> - <code>NUM_9</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>NUM_ASTERIX</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>NUM_ENTER</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>NUM_MINUS</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>NUM_DOT</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>NUM_PLUS</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section> -->
+        </main>
+        <footer>
+            <a href="https://github.com/spacehuhntech/WiFiDuck" target="_blank">Source</a>
+            <br><br>
+            <span id="version"></span><br>
+            Copyright (c) 2024 Linus Weber, <br> 2021 Spacehuhn Technologies<br>
+            <a href="https://spacehuhn.com" target="_blank">spacehuhn.com</a>
+        </footer>
+    </body>
+</html>

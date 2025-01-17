@@ -1,0 +1,44 @@
+REM Standard RD Protokoll
+DEFAULTDELAY 50
+LOCALE DE
+STRDELAY 0
+
+STRING Situation bei Eintreffen RD: 
+ENTER
+ENTER
+
+STRING EE: keine kritische Blutung, kein V.a. HWS-Verletzung
+ENTER
+ENTER
+
+STRING A: Atemwege frei und sicher, Atmung vorhanden
+ENTER
+STRING B: ungestörte Spontanatmung, keine Dyspnoe, keine Zyanose, AF normal, keine patholog. Atemgeräusche, kein Einsatz der Atemhilfsmuskulatur, seitengleiche Thoraxexkursionen
+ENTER
+STRING C: Puls peripher gut tastbar, rhythmisch, normofrequent, Recap peripher und zentral < 2s, keine äußeren Blutungen, rosiges Hautkollorid
+ENTER
+STRING D: zeitlich, örtlich, situativ und persönlich orientiert, Pupillen isokor, mittelweit und lichtreaktiv, alle vier Extremitäten frei beweglich, MDS unauffällig, keine Intoxikation, Schmerzen VAS 0
+ENTER
+ENTER
+
+STRING TNC: nicht durchgeführt (kein Trauma)
+ENTER
+ENTER
+
+STRING S: 
+ENTER
+STRING A: 
+ENTER
+STRING M: 
+ENTER
+STRING P: 
+ENTER
+STRING L: 
+ENTER
+STRING E: 
+ENTER
+STRING R:
+ENTER
+ENTER
+
+STRING Verlauf: unverändert bei Übergabe

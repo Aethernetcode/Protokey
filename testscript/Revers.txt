@@ -1,0 +1,10 @@
+REM Revers RD Protokoll
+DEFAULTDELAY 50
+LOCALE DE
+STRDELAY 0
+
+STRING Pat wünscht dezitiert keinen Transport in eine Behandlungseinrichtung --> Pat wird von RD mehrmals darauf hingewiesen, dass ein Transport aus unserer Sicht notwendig erscheint;
+ENTER
+STRING Pat lehnt trotzdem ab; Pat ist vollkommen geschäfts- und zurechnungsfähig und versteht alle möglichen Konsequenzen;
+ENTER
+STRING RD teilt Pat mit, dass bei Verschlechterung des Zustandes sofort nochmals der Notruf gewählt werden soll, zudem sollte ein Arzt zeitnah aufgesucht werden;

@@ -1,0 +1,232 @@
+REM Lupo RD Protokoll
+DEFAULTDELAY 50
+STRDELAY 0
+
+
+STRING Notfallgeschehen laut Melder/Patient:
+ENTER
+
+ENTER
+ENTER
+
+STRING Situation bei Eintreffen des RD:
+ENTER
+
+ENTER
+ENTER
+
+STRING c - keine kritische Blutung,
+ENTER
+
+STRING Maßnahmen: keine Interventionen notwendig
+ENTER
+
+STRING Ergebnis:
+ENTER
+
+ENTER
+ENTER
+
+STRING A - Atemweg frei und sicher, kein v.a. HWS-Verletzung,
+ENTER
+
+STRING Maßnahmen: keine Interventionen notwendig
+ENTER
+
+STRING Ergebnis:
+
+ENTER
+ENTER
+
+STRING B - ungestörte Spontanatmung, keine Dyspnoe, keine pathologischen Atemgeräusche, keine Zyanose,
+ENTER
+
+STRING Atemfrequenz normal, Atemtiefe normal, kein Einsatz der Atemhilfsmuskulatur, seitengleiche Thoraxexkursionen,
+ENTER
+
+STRING =>initiale SpO2: % mit Liter O2/ unter Raumluft
+ENTER
+
+STRING Vorerkrankung bekannt:
+ENTER
+
+STRING behandelt mit:
+ENTER
+
+ENTER
+ENTER
+
+ENTER
+ENTER
+
+STRING Maßnahmen: keine Interventionen notwendig
+ENTER
+
+STRING Ergebnis:
+ENTER
+
+ENTER
+ENTER
+
+ENTER
+ENTER
+
+STRING C - Radialispuls gut tastbar, rhythmisch, normofrequent, Recap peripher + zentral <2s,
+ENTER
+
+STRING keine äußeren Blutungen, rosige-warme-trockene Haut,
+ENTER
+
+STRING =>Initial bei pp= /min ein NiBD von mmHg
+ENTER
+
+STRING =>EKG: rythmisch, normofrequent, QRS < 0,12s, PQ-Strecke 0,12-2s, ST-Strecke normal,
+ENTER
+
+STRING Vorerkrankung bekannt:
+ENTER
+
+STRING behandelt mit:
+ENTER
+
+ENTER
+ENTER
+
+STRING Maßnahmen: keine Interventionen notwendig
+ENTER
+
+STRING Ergebniss:
+
+ENTER
+ENTER
+
+STRING D - zeitlich, örtlich, situativ und persönlich orientiert, Pupillen konsensuell/ rund/ isokor/ mittelweit/ prompt lichtreaktiv,
+ENTER
+
+STRING FAST negativ, alle vier Extremitäten frei beweglich, keine Paresen/Parästhesien/Plegien; MDS unauffällig, keine Intoxikation,
+ENTER
+
+STRING =>Inital: Blutzucker mg/dl,
+ENTER
+
+STRING =>Initialae Schmerzen nach NRS/VAS (1-10) = 0,
+ENTER
+
+STRING =>Initiale GCS:
+ENTER
+
+ENTER
+ENTER
+
+STRING Augen öffnen: Spontan (4) / auf Ansprache (3) / auf Schmerzreiz (2) / kein Öffnen (1)
+ENTER
+
+STRING Punkte -->
+ENTER
+
+STRING Verbal: orientiert (5) / desorientiert (4) / einzelne Worte (3) / sinnlose Laute (2) / keine (1)
+ENTER
+
+STRING Punkte -->
+ENTER
+
+STRING Motorisch: auf Aufforderung (6) / gezielte Abwehrbewegung (5) / ungezielte Abwehrbewegung (4) / Beugesynergismen (3) / Strecksynergismen (2) / keine (1)
+ENTER
+
+STRING Punkte -->
+ENTER
+
+ENTER
+ENTER
+
+STRING Vorerkrankung bekannt:
+ENTER
+
+STRING behandelt mit:
+ENTER
+
+ENTER
+ENTER
+
+STRING Maßnahmen: keine Interventionen notwendig
+ENTER
+
+STRING Ergebniss:
+
+ENTER
+ENTER
+
+STRING erweiterter TNC: nicht durchgeführt (kein Trauma), keine offensichtlichen Verletzungen;
+ENTER
+
+ENTER
+ENTER
+
+STRING Symptome- siehe Notfallgeschehen+Situation bei Eintreffen
+ENTER
+
+STRING Allergien-
+ENTER
+
+STRING Medikamente- Siehe B/C/D
+ENTER
+
+STRING Patientengeschichte -
+ENTER
+
+STRING Letzte/letztes -
+ENTER
+
+STRING Ereigniss=Notfallgeschehen
+ENTER
+
+STRING Risikofaktoren-
+ENTER
+
+ENTER
+ENTER
+
+STRING Angewendete Notkompetenzalgorythmen:
+ENTER
+
+ENTER
+ENTER
+
+STRING Der Patient/Die Patientin wurde über mögliche Nebenwirkungen der Notkompetenzmedikation aufgeklärt.
+ENTER
+
+STRING Der Patient/Die Patientin verneinte glaubwürdig alle Kontraindikationen.
+ENTER
+
+STRING Der Patient/Die Patientin stimmte der Durchführung der Maßnahme zu.
+ENTER
+
+ENTER
+ENTER
+
+STRING Auffälligkeiten beim Transport: keine
+ENTER
+
+ENTER
+ENTER
+
+STRING Patientenzustand bei Übergabe:
+ENTER
+
+STRING SpO2: % mit Liter O2/ unter Raumluft
+ENTER
+
+STRING bei pp= /min ein NiBD von mmHg
+ENTER
+
+STRING Blutzucker mg/dl,
+ENTER
+
+STRING Schmerzen nach NRS/VAS (1-10) = 0,
+ENTER
+
+STRING GCS:
+ENTER
+
+ENTER
+ENTER

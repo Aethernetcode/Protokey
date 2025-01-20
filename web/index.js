@@ -316,6 +316,29 @@ function autorun(fileName) {
   ws_send("set autorun \"" + fixFileName(fileName) + "\"", log_ws);
 }
 
+
+// Uplad a File
+
+function uploadFiles() {
+  const input = document.getElementById("fileUpload");
+  if (!input.files.length) {
+    alert("Please select at least one file.");
+    return;
+  }
+
+  for (const file of input.files) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const content = event.target.result;
+      const fileName = file.name; // Internal filename = uploaded filename
+      write(fileName, content);  // Use existing write function
+    };
+    reader.readAsText(file);
+  }
+}
+
+
+
 // ! Write content to file
 function write(fileName, content) {
   stop(fileName);

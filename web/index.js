@@ -319,6 +319,12 @@ function autorun(fileName) {
 
 // Uplad a File
 
+window.onload = function() {
+  document.getElementById("fileUpload").addEventListener("change", function() {
+    uploadFiles();  // Automatically upload once files are selected
+  });
+}; 
+
 function uploadFiles() {
   const input = document.getElementById("fileUpload");
   if (!input.files.length) {
@@ -326,12 +332,20 @@ function uploadFiles() {
     return;
   }
 
+  let filesProcessed = 0; // Track completed uploads
+
   for (const file of input.files) {
     const reader = new FileReader();
     reader.onload = function(event) {
-      const content = event.target.result;
-      const fileName = file.name; // Internal filename = uploaded filename
-      write(fileName, content);  // Use existing write function
+      let content = event.target.result;
+      let fileName = file.name.replace(/\.txt$/i, ""); // Remove ".txt" extension
+
+      write(fileName, content); // Use existing write function
+
+      filesProcessed++;
+      if (filesProcessed === input.files.length) {
+        update_file_list(); // Refresh file list after last file is processed
+      }
     };
     reader.readAsText(file);
   }

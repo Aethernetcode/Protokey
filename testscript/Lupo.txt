@@ -1,6 +1,7 @@
 REM Lupo RD Protokoll
 DEFAULTDELAY 50
 STRDELAY 0
+LOCALE DE
 
 
 STRING Notfallgeschehen laut Melder/Patient:
